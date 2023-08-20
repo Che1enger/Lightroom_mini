@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litghtroom(nano) </title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body style="overflow-x: hidden;">
+    <div class="nav-placeholder">
+        <div class="nav">
+        <button id="button1" data-title="Basic">B</button>
+        <button id="button2" data-title="Effect">E</button>
+        <button id="button3" data-title="Vignette">V</button>
+        <button id="button4" data-title="Clear">×</button>
+        <button id="button5" data-title="Download">↓</button>
+    </div>
+    </div>
+    
+    <div class="wrapper">
+        <div class="sections">
+
+        <div class="section-content" id="section1">
+            <h3 style="text-align: center;">Basic</h3>
+            <div class="slaiders">
+                <div>
+                <div class="text1">
+                <span>Brightness</span>
+                <div class="value">
+                    <span>Value: <span id="bright_demo">0</span></span>
+                </div> 
+            </div>
+            <input type="range" min="1" max="200" value="100" class="slider" id="bright">
+            
+            </div>
+            <div>
+                <div class="text1">
+                <span>Contrast</span>
+                <div class="value">
+                    <span>Value: <span id="contrast_demo">0</span></span>
+                </div> 
+            </div>
+            <input type="range" min="1" max="200" value="100" class="slider" id="contrast">
+            
+            </div>
+
+            <div>
+                <div class="text1">
+                <span>Saturation</span>
+                <div class="value">
+                    <span>Value: <span id="saturate_demo">0</span></span>
+                </div> 
+            </div>
+            <input type="range" min="0" max="200" value="100" class="slider" id="saturateSlider">
+            
+            </div>
+
+            <div>
+                <div class="text1">
+                <span>Temperature</span>
+                <div class="value">
+                    <span>Value: <span id="temperature_demo">0</span></span>
+                </div> 
+            </div>
+            <input type="range" min="-100" max="100" value="1" class="slider" id="temperatureSlider">
+            
+            </div>
+            
+            <div>
+                <div class="text1">
+                <span>Hue Rotate</span>
+                <div class="value">
+                    <span>Value: <span id="hueRotate_demo">0</span></span>
+                </div>
+            </div>
+            <input type="range" min="-360" max="360" value="0" class="slider" id="hueRotateSlider">
+            
+            </div>
+            </div>
+            
+            
+           
+        </div>
+        <div class="section-content" id="section2" style="display: none;">
+            <h3 style="text-align: center;">Effect</h3>
+
+            <div class="effect_cards">
+                <div class="card" data-filter="sepia">
+                  <img src="example.avif" alt="" data-filter="sepia">
+                  <p>Sepia</p>
+                </div>
+                <div class="card" data-filter="grayscale">
+                  <img src="example.avif" alt="" data-filter="grayscale">
+                  <p>Black-and-white</p>
+                </div>
+                <div class="card" data-filter="sunny">
+                  <img src="example.avif" alt="" data-filter="sunny">
+                  <p>Sunny</p>
+                </div>
+                <div class="card" data-filter="darky">
+                  <img src="example.avif" alt="" data-filter="darky">
+                  <p>Darky</p>
+                </div>
+                <div class="card" data-filter="blur">
+                  <img src="example.avif" alt="" data-filter="blur">
+                  <p>Blur</p>
+                </div>
+                <div class="card" data-filter="invert">
+                  <img src="example.avif" alt="" data-filter="invert">
+                  <p>Invert</p>
+                </div>
+              </div>
+              
+        </div>
+
+        <div class="section-content" id="section3" style="display: none;">
+            <h3 style="text-align: center;">Vignette</h3>
+
+            <div class="slaiders">
+                <div>
+                            <div class="text1">
+                        <span>Vignette 1</span>
+                        <div class="value">
+                            <span>Value: <span id="vignette_demo">0</span></span>
+                        </div>        
+                    </div>                    
+                    <input type="range" min="0" max="200" value="199" class="slider" id="vignetteSlider">
+
+            </div>
+            <div>
+                <div class="text1">
+                                <span>Vignette 2</span>
+                                <div class="value">
+                                    <span>Value: <span id="vignette_demo1">0</span></span>
+                                </div> 
+                            </div>                
+                            <input type="range" min="0" max="200" value="200" class="slider" id="vignetteSlider1">       
+
+            </div>
+            
+                
+            <div>
+                <div class="text1">
+                <span>Vignette 3</span>
+                <div class="value">
+                    <span>Value: <span id="vignette_demo2">0</span></span>
+                </div>        
+            </div>                
+            <input type="range" min="0" max="200" value="0" class="slider" id="vignetteSlider2">
+
+            </div>
+                
+            <div>
+                <div class="text1">
+                <span>Vignette 4</span>
+                <div class="value">
+                    <span>Value: <span id="vignette_demo3">0</span></span>
+                </div>              
+                </div>                
+                <input type="range" min="0" max="200" value="0" class="slider" id="vignetteSlider3">
+
+            </div>
+            
+            
+        
+    </div>
+</div>       
+</div>
+        
+
+       
+
+        <div id="image">
+            <div id="imageWrapper">
+                <div id="imageContent">
+                    <input type="file" id="fileInput" accept="image/*">
+                    <img id="uploadedImage">
+                    <div class="vignette"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
